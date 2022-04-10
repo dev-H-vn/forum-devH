@@ -175,10 +175,9 @@ const blogCtrl = {
       ]);
 
       if (!data[0]) {
-        return;
+        return res.json({});
       }
       const count = data[0].totalCount.count;
-
       const blogs = data[0].totalData;
 
       let total = 0;

@@ -78,9 +78,7 @@ export const getUser = createAsyncThunk(
     try {
       dispatch(loading(true));
       const res = await getAPI(`profile/${id}`);
-
       dispatch(loading(false));
-
       return res;
     } catch (err) {
       dispatch(alertAction({ errors: [err.response.data.msg] }));
@@ -95,10 +93,9 @@ export const getPost = createAsyncThunk(
   async ({ id, search }, { dispatch }) => {
     try {
       dispatch(loading(true));
-      const res = await getAPI(`blogs/user/${id}${search}`);
-
+      let res;
+      res = await getAPI(`blogs/user/${id}${search}`);
       dispatch(loading(false));
-
       return res;
     } catch (err) {
       dispatch(alertAction({ errors: [err.response.data.msg] }));

@@ -27,12 +27,12 @@ app.use("/api", blogRouter);
 app.use("/api", commentRouter);
 
 // deloy
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
-  });
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
+//   });
+// }
 
 // listenn
 
@@ -48,7 +48,7 @@ mongoose.connect(
     console.log("Connected to mongodb");
   }
 );
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log("server run  ", PORT);

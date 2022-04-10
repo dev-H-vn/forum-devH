@@ -16,7 +16,7 @@ function FacebookButton() {
   return (
     <div className="mt-2">
       <FacebookLogin
-        appId="1796289080569698"
+        appId="316030890663563"
         onSuccess={onSuccess}
         height="50px"
       ></FacebookLogin>
